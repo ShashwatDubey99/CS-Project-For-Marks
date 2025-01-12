@@ -1,8 +1,8 @@
-import mariadb
+import mysql.connector
 
 # Function to get a database connection
 def get_connection():
-    return mariadb.connect(
+    return mysql.connector.connect(
         user='root',
         password='chill@hell',
         host='127.0.0.1',
