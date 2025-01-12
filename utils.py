@@ -43,7 +43,7 @@ def initialize_db():
         CREATE TABLE IF NOT EXISTS VehicleRegistrations (
             registration_id INT PRIMARY KEY AUTO_INCREMENT,
             vehicle_type_id VARCHAR(10),
-            license_plate TEXT UNIQUE,
+            license_plate TEXT,
             customer_id INT,
             service_ids TEXT,
             status TEXT DEFAULT 'in_queue',
