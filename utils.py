@@ -18,23 +18,23 @@ def initialize_db():
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS VehicleTypes (
             vehicle_type_id VARCHAR(10) PRIMARY KEY,
-            vehicle_type_name TEXT UNIQUE
+            vehicle_type_name VARCHAR(40) UNIQUE
         )
     ''')
     
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS Customers (
             customer_id INT PRIMARY KEY AUTO_INCREMENT,
-            customer_name TEXT,
-            mobile_no TEXT UNIQUE,
-            address TEXT
+            customer_name VARCHAR(40),
+            mobile_no VARCHAR(40) UNIQUE,
+            address VARCHAR(40)
         )
     ''')
 
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS Services (
             service_id INT PRIMARY KEY AUTO_INCREMENT,
-            service_name TEXT UNIQUE,
+            service_name VARCHAR(40) UNIQUE,
             cost REAL
         )
     ''')
@@ -43,10 +43,10 @@ def initialize_db():
         CREATE TABLE IF NOT EXISTS VehicleRegistrations (
             registration_id INT PRIMARY KEY AUTO_INCREMENT,
             vehicle_type_id VARCHAR(10),
-            license_plate TEXT,
+            license_plate VARCHAR(40),
             customer_id INT,
-            service_ids TEXT,
-            status TEXT DEFAULT 'in_queue',
+            service_ids VARCHAR(40),
+            status VARCHAR(40) DEFAULT 'in_queue',
             FOREIGN KEY (customer_id) REFERENCES Customers (customer_id),
             FOREIGN KEY (vehicle_type_id) REFERENCES VehicleTypes (vehicle_type_id)
         )
