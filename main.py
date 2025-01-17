@@ -14,12 +14,13 @@ def main():
         print("6. Remove Service")
         print("7. Register Vehicle")
         print("8. Update Service Status")
-        print("9. View Details by Status")
-        print("10. View All Tables (Vehicle Types & Customers)")
-        print("11. Generate Bill")
-        print("12. Exit")
+        print("9. Update Services Of Registered Vehicle")
+        print("10. View Details by Status")
+        print("11. View All Tables (Vehicle Types & Customers)")
+        print("12. Generate Bill")
+        print("13. Exit")
 
-        choice = input("Enter your choice (1-12): ")
+        choice = input("Enter your choice (1-13): ")
 
         if choice == "1":
             utils.add_vehicle_type()
@@ -38,12 +39,14 @@ def main():
         elif choice == "8":
             utils.update_service_status()
         elif choice == "9":
-            utils.view_details_by_status()
+            utils.update_service_selected()    
         elif choice == "10":
-            utils.display_tables()
+            utils.view_details_by_status()
         elif choice == "11":
-            utils.generate_bill()
+            utils.display_tables()
         elif choice == "12":
+            utils.generate_bill()
+        elif choice == "13":
             print("Exiting... Goodbye!")
             break
         else:
@@ -51,4 +54,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
