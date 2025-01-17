@@ -17,7 +17,7 @@ def main():
         print("9. Update Services Of Registered Vehicle")
         print("10. View Details by Status")
         print("11. View All Tables (Vehicle Types & Customers)")
-        print("12. Generate Bill")
+        print("12. Generate Bill/Invoice")
         print("13. Exit")
 
         choice = input("Enter your choice (1-13): ")
