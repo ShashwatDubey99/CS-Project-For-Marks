@@ -189,6 +189,23 @@ def update_service_status():
         print("Registration ID not found.")
     conn.close()
 
+def update_service_selected():
+    conn = get_connection()
+    cursor = conn.cursor()
+    registration_id = int(input("Enter Registration ID: ").strip())
+    service_ids = input("Enter service IDs (comma-separated): ").strip()
+    cursor.execute(
+        'UPDATE VehicleRegistrations SET service_ids = %s WHERE registration_id = %s',
+        (service_ids, registration_id)
+    )
+    conn.commit()
+    if cursor.rowcount > 0:
+        print("Service  updated successfully.")
+    else:
+        print("Registration ID not found.")
+    conn.close()
+    
+
 # View details by status
 def view_details_by_status():
     conn = get_connection()
